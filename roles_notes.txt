@@ -1,0 +1,59 @@
+Coordinator
+    Groups may be assigned an adviser and a panel. //
+    Grades from both the adviser and the panel can be finalized.
+    Can approve, remove, or reschedule defense.
+    Can manage the defense schedule in calendar mode.
+    The coordinator may publish the title of completed Capstones 1 and 2 on the Public Access dashboard.
+    Can create and manage accounts. //
+
+Adviser and Panel
+    View advisees and groups appointed as panel members. //
+    Directly grade the students assigned to them.  //
+    View and comment on project proposal documents. //
+    Accept or decline appointments for consultations on project proposals, paper revisions, and more.
+
+Student
+    Can submit a proposal to the adviser; however, materials must be converted into smaller files first. //
+    Can contact their adviser for consultation. //
+    The consultation hours for advisers and panels can be viewed. //
+    Can see available slots for defense and consultation.
+
+Public Access
+    View completed Capstones 1 and 2 from the specific school years. //Pending
+
+    add mailer, for verification
+
+    grades from
+    -chair
+    -critic
+    -advisor
+    -colloquim
+    -total score
+
+
+---------------PROBLEM
+-coordinator page, groupings request 
+    --no side effect or reload after clicking reject button(may nangyayari sa backend pero sa frontend makikita lang change after manualy reloading)
+
+-student page, request groupings 
+    --an advisor can be selected for BOTH advisor and panel at the same time(di pwede yun)
+
+-coordinator page, capstone/reaserch
+    --clicking score button redirects to server error 500
+        http://127.0.0.1:8000/view-grading-form/B9TVYhjs68vl1d5sGyVqnCksSAaBEJVUrIewksImhsXb8zj1RJ
+
+-coordinator page, grading
+    --na finalize yung paper kahit walang grade
+
+-coordinator page, grading form
+    --walang natatype
+
+-advisor/panel page, dashboard scoring
+    --clicking score button redirects to server error 500 for advisors and panels
+        (http://127.0.0.1:8000/view-grading-form/B9TVYhjs68vl1d5sGyVqnCksSAaBEJVUrIewksImhsXb8zj1RJ)
+    --clicking grading form button does nothing
+
+-public Access
+    --cannot view capstone in public access view
+    (ang nakikita lang is title and abstract, 
+        gusto ni maam makita yung capstone in new tab para mabasa daw and download, kaya ng iframes yun diba?)
