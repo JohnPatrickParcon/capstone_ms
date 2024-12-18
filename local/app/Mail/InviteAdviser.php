@@ -19,6 +19,6 @@ class InviteAdviser extends Mailable
 
     public function build()
     {
-        return $this->markdown('mails.inviteAdviser')->subject("CLSU CMS Advisor Registration");
+        return $this->markdown('mails.inviteAdviser')->subject("CMS Advisor Registration");
     }
 }

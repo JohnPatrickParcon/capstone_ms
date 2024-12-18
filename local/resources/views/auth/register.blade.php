@@ -135,6 +135,10 @@
                 </div>
             </div>
 
+            <div>
+                <input name="role" value=4 type="hidden">
+            </div>
+
             <div class="mt-1 mb-2">
                 <div class="col-12">
                     <button type="submit"

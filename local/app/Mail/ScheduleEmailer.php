@@ -19,6 +19,6 @@ class ScheduleEmailer extends Mailable
 
     public function build()
     {
-        return $this->markdown('mails.inviteAdviser')->subject("CLSU CMS Adviser Registration");
+        return $this->markdown('mails.inviteAdviser')->subject("CMS Adviser Registration");
     }
 }

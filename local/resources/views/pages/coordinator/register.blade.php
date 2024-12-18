@@ -129,7 +129,7 @@
             </div>
 
             <div>
-                <input name="role" value="2" type="hidden">
+                <input name="role" value=2 type="hidden">
             </div>
 
             <div class="mb-2">
