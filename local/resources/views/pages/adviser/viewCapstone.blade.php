@@ -41,11 +41,24 @@
                     <div id="main_section">
                         @if ($role == 2 && !$is_published)
                             <div class="text-end">
+                                <!-- {{$is_finalized. $is_published}} -->
                                 <button class="btn btn-primary" onclick="publishedCapstone()">Publish</button>
                             </div>
                             <br>
                             
-                        @else
+                        @elseif($role == 2 && $is_published)
+                            <div class="text-end">
+                                <p><b><i>* Capstone Published</i></b></p>
+                            </div>
+                            <br>
+                        @endif
+                        @if ($role == 3 && !$is_published)
+                            <div class="text-end">
+                            <p><b><i>* Capstone Not Published</i></b></p>
+                            </div>
+                            <br>
+                            
+                        @elseif($role == 3 && $is_published)
                             <div class="text-end">
                                 <p><b><i>* Capstone Published</i></b></p>
                             </div>
@@ -54,8 +67,8 @@
                         <div class="p-5 card" id="preview" style="height: 100vh;">
                             <h3 class="text-center">{{ $capstone_info[0]->title }}</h3>
                             <br>
-                            <iframe style="border: 1px solid;" src="/{{ $capstone_info[0]->file }}" height="100%"
-                                width="100%" title="Capstone Preview" type="application/pdf"></iframe>
+                            <iframe style="border: 1px solid;" src="{{ "../".$capstone_info[0]->file }}" height="100%"
+                                width="100%" title="Capstone Preview" type="application/pdf"></iframe>ifr
                             <br>
                             <hr>
                             <input type="hidden" id="group_reference" name="group_reference"
@@ -326,7 +339,7 @@
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
-                    url: '/publishcapstone/' + reference,
+                    url: './../publishcapstone/' + reference,
                     type: 'POST',
                     data: JSON.stringify({
                         abstract

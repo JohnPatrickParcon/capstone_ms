@@ -10,7 +10,7 @@
     <ul class="nav" id="asdasd">
         <li class="flex items-center justify-center nav-item nav-profile">
                 <div class="flex flex-col">
-                    <img src="{{ asset("images/clsu_logo.png") }}" style="height: 50px">
+                    <img src="{{ asset("local/public/images/clsu_logo.png") }}" style="height: 50px">
                     <h1 style="color: white;">
                         <b>
                             &nbsp;CMS

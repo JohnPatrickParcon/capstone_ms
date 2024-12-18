@@ -71,7 +71,7 @@
                         >
                             <div id="welcome_tag">
                                 <div class="mb-2">
-                                    <center><img src="{{ asset("images/clsu_logo.png") }}" height="150px" alt="logo">
+                                    <center><img src="{{ asset("local/public/images/clsu_logo.png") }}" height="150px" alt="logo">
                                     </center>
                                 </div>
                                 <div class="brand-logo">

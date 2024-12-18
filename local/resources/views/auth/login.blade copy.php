@@ -67,7 +67,7 @@
                         <div class="auth-form-transparent" style="padding: 5%;">
                             <div id="welcome_tag" class="grid mt-4 justify-items-center">
                                 <a href="{{route('public')}}">
-                                    <img src="{{ asset("images/clsu_logo.png") }}" alt="logo" class="w-16 ">
+                                    <img src="{{ asset("local/public/images/clsu_logo.png") }}" alt="logo" class="w-16 ">
                                 </a>
                                 <p><b>Capstone Management System</b></p>
                             </div>

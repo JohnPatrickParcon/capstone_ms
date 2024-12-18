@@ -9,7 +9,7 @@
     
     <style>
         body {
-            background-image: url('images/clirdec_bg.png');
+            background-image: url('local/public/images/clirdec_bg.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;

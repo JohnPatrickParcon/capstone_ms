@@ -60,7 +60,7 @@ class DashboardController extends Controller
                     $btn = '';
                     $btn .= '<button class="btn" style="background: green; color: white;" onclick="handleViewCapstone(\''.$data["group_reference"].'\')">View</button>&nbsp;&nbsp;';
                     // $btn .= '<button class="btn" style="background: green; color: white;" onclick="handleScoreCapstoneAdviser(\''.$data["group_reference"].'\')"><i class="mdi mdi-pen" title="Score Capstone"></i></button>&nbsp;&nbsp;';
-                    $btn .= "<button class='btn btn-primary' onclick='scoreCapstone(\"".$data["group_reference"]."\")'>Score</button>&nbsp;";
+                    //$btn .= "<button class='btn btn-primary' onclick='scoreCapstone(\"".$data["group_reference"]."\")'>Score</button>&nbsp;";
                     // $res = DB::table("capstone_grading_forms")->where("group_reference", $data["group_reference"])->get();
                     // if(count($res) > 0){
                     //     $my_data = json_decode($res[0]->responses);
@@ -165,7 +165,7 @@ class DashboardController extends Controller
                     $btn = '';
                     $btn .= '<button class="btn" style="background: green; color: white;" onclick="handleViewCapstone(\''.$data["group_reference"].'\')">View</button>&nbsp;&nbsp;';
                     // $btn .= '<button class="btn" style="background: green; color: white;" onclick="handleScoreCapstonePanel(\''.$data["group_reference"].'\')"><i class="mdi mdi-pen" title="Score Capstone"></i></button>&nbsp;&nbsp;';
-                    $btn .= "<button class='btn btn-primary' onclick='scoreCapstone(\"".$data["group_reference"]."\")'>Score</button>&nbsp;";
+                    //$btn .= "<button class='btn btn-primary' onclick='scoreCapstone(\"".$data["group_reference"]."\")'>Score</button>&nbsp;";
                     return $btn;
                 })
                 ->addColumn('stundens_name', function ($data) {
@@ -263,57 +263,57 @@ class DashboardController extends Controller
         if(count($result) == 0){
             return view('pages.errors.no_capstone');
         }
-
+        
         $is_finalized = true;
 
         $grade_temp = [];
-        $temp = DB::table("advisers")->where("group_reference", "like", $reference)->get();
-        foreach ($temp as $key => $value) {
-            $user_info = [];
-            $name = DB::table("users")->where("id", $value->adviser_id)->first()->name . " " . "(Adviser)";
-            $student_grades = json_decode($value->score);
-
-            if($student_grades != null){
-                foreach ($student_grades as $key2 => $value2) {
-                    $student_grades[$key2]->name = DB::table("users")->where("id", "like", $value2->id)->first()->name;
-                }
-                $grade_temp[$value->adviser_id] = ["name" => $name, "grades" => $student_grades];
-            } else {
-                $grade_temp[$value->adviser_id] = ["name" => $name, "grades" => []];
-            }
-
-            // if($value->is_finalized == 0){
-            //     $is_finalized = false;
-            // }
-        }
-
-        $temp = DB::table("panels")->where("group_reference", "like", $reference)->get();
-        foreach ($temp as $key => $value) {
-            $user_info = [];
-            $name = DB::table("users")->where("id", $value->panel_id)->first()->name . " " . "(Panel)";
-            $student_grades = json_decode($value->score);
-
-            if($student_grades != null){
-                foreach ($student_grades as $key2 => $value2) {
-                    $student_grades[$key2]->name = DB::table("users")->where("id", "like", $value2->id)->first()->name;
-                }
-                $grade_temp[$value->panel_id] = ["name" => $name, "grades" => $student_grades];
-            } else {
-                $grade_temp[$value->panel_id] = ["name" => $name, "grades" => []];
-            }
-
-            // if($value->is_finalized == 0){
-            //     $is_finalized = false;
-            // }
-        }
-
-        $grading_form_data = DB::table("capstone_grading_forms")->where("group_reference", $reference)->get();
-        // dd($grading_form_data);
-        if(count($grading_form_data) > 0){
-            if($grading_form_data[0]->approved != 1){
-                $is_finalized = false;
-            }
-        }
+        //$temp = DB::table("advisers")->where("group_reference", "like", $reference)->get();
+        //foreach ($temp as $key => $value) {
+        //    $user_info = [];
+        //    $name = DB::table("users")->where("id", $value->adviser_id)->first()->name . " " . "(Adviser)";
+        //    $student_grades = json_decode($value->score);
+//
+        //    if($student_grades != null){
+        //        foreach ($student_grades as $key2 => $value2) {
+        //            $student_grades[$key2]->name = DB::table("users")->where("id", "like", $value2->id)->first()->name;
+        //        }
+        //        $grade_temp[$value->adviser_id] = ["name" => $name, "grades" => $student_grades];
+        //    } else {
+        //        $grade_temp[$value->adviser_id] = ["name" => $name, "grades" => []];
+        //    }
+//
+        //    // if($value->is_finalized == 0){
+        //    //     $is_finalized = false;
+        //    // }
+        //}
+//
+        //$temp = DB::table("panels")->where("group_reference", "like", $reference)->get();
+        //foreach ($temp as $key => $value) {
+        //    $user_info = [];
+        //    $name = DB::table("users")->where("id", $value->panel_id)->first()->name . " " . "(Panel)";
+        //    $student_grades = json_decode($value->score);
+//
+        //    if($student_grades != null){
+        //        foreach ($student_grades as $key2 => $value2) {
+        //            $student_grades[$key2]->name = DB::table("users")->where("id", "like", $value2->id)->first()->name;
+        //        }
+        //        $grade_temp[$value->panel_id] = ["name" => $name, "grades" => $student_grades];
+        //    } else {
+        //        $grade_temp[$value->panel_id] = ["name" => $name, "grades" => []];
+        //    }
+//
+        //    // if($value->is_finalized == 0){
+        //    //     $is_finalized = false;
+        //    // }
+        //}
+//
+        //$grading_form_data = DB::table("capstone_grading_forms")->where("group_reference", $reference)->get();
+        //// dd($grading_form_data);
+        //if(count($grading_form_data) > 0){
+        //    if($grading_form_data[0]->approved != 1){
+        //        $is_finalized = false;
+        //    }
+        //}
 
 
         $res = DB::table("published_capstone")->where("group_reference", "like", $reference)->get();
@@ -419,7 +419,7 @@ class DashboardController extends Controller
     }
 
     public function publishcapstone($reference, Request $request){
-        //dd($reference, $request);
+        // dd($reference, $request);
         $data = $request->json()->all();
         $capstone_info = DB::table("groupings_capstone")->where("group_reference", $reference)->first();
         $filePath = $capstone_info->file;

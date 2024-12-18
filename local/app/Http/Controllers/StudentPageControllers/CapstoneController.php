@@ -126,7 +126,7 @@ class CapstoneController extends Controller
                 "group_reference" => $res[0]->group_reference,
                 "title" => $request->get("title"),
                 "abstract" => $request->get("abstract"),
-                "file" => "assets/capstone/".$file_name,
+                "file" => "local/public/assets/capstone/".$file_name,
             ]);
             $file->move($main_path, $file_name);
             DB::commit();
@@ -178,7 +178,7 @@ class CapstoneController extends Controller
         DB::beginTransaction();
         try {
             DB::table("groupings_capstone")->where("group_reference", $request->get("reference"))->update([
-                "file" => "assets/capstone/".$file_name,
+                "file" => "local/public/assets/capstone/".$file_name,
             ]);
             $file->move($main_path, $file_name);
             DB::commit();

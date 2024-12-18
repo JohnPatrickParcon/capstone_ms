@@ -45,8 +45,8 @@
             </div>
             <ul class="nav" id="asdasd">
                 <li class="nav-item nav-profile">
-                    <div class="nav-profile-text d-flex flex-column pr-3">
-                        <h1 style="color: white;"><b><span><img src="{{ asset("images/clsu_logo.png") }}" style="height: 50px"></span>&nbsp;CMS</b></h1>
+                    <div class="pr-3 nav-profile-text d-flex flex-column">
+                        <h1 style="color: white;"><b><span><img src="{{ asset("local/public/images/clsu_logo.png") }}" style="height: 50px"></span>&nbsp;CMS</b></h1>
                     </div>
                     <hr>
                 </li>
@@ -65,16 +65,16 @@
             </ul>
         </nav>
         <div class="container-fluid page-body-wrapper">
-            <nav class="navbar col-lg-12 col-12 p-lg-0 fixed-top d-flex flex-row" style="background-color: #d6dde5;" id="nav_var_id">
+            <nav class="flex-row navbar col-lg-12 col-12 p-lg-0 fixed-top d-flex" style="background-color: #d6dde5;" id="nav_var_id">
                 <div class="navbar-menu-wrapper d-flex align-items-stretch justify-content-between">
-                    <button class="navbar-toggler navbar-toggler align-self-center mr-2" type="button" data-toggle="minimize">
+                    <button class="mr-2 navbar-toggler align-self-center" type="button" data-toggle="minimize">
                         <i class="mdi mdi-menu"></i>
                     </button>
                 </div>
             </nav>
             <div class="main-panel" style="min-height: 100vh; max-height: 100vh; overflow-y: auto;">
-                <div class="content-wrapper pb-0">
-                    <div class="page-header flex-wrap">
+                <div class="pb-0 content-wrapper">
+                    <div class="flex-wrap page-header">
                         <h3 class="mb-0"> Browse and Explore published Capstone here in Capstone Management System</h3>
                     </div>
                     <br>
@@ -92,8 +92,8 @@
                 </div>
                 <footer class="footer">
                     <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                        <span class="text-muted d-block text-center text-sm-left d-sm-inline-block"></span>
-                        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"><b>Capstone Management System</b></span>
+                        <span class="text-center text-muted d-block text-sm-left d-sm-inline-block"></span>
+                        <span class="float-none mt-1 text-center float-sm-right d-block mt-sm-0"><b>Capstone Management System</b></span>
                     </div>
                 </footer>
             </div>

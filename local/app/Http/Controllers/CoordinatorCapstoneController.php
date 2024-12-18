@@ -116,7 +116,7 @@ class CoordinatorCapstoneController extends Controller
                     $btn = '';
                     if(count($row["capstone"]) > 0){
                         $btn .= "<button class='btn btn-primary' onclick='viewCapstone(\"".$row['reference']."\")'>View</button>&nbsp;";
-                        $btn .= "<button class='btn btn-primary' onclick='scoreCapstone(\"".$row['reference']."\")'>Score</button>&nbsp;";
+                        //$btn .= "<button class='btn btn-primary' onclick='scoreCapstone(\"".$row['reference']."\")'>Score</button>&nbsp;";
                     } else {
                         $btn .= "No valid action";
                         // $btn .= "<button class='btn btn-primary' onclick='viewCapstone(\"".$row['reference']."\")'>View</button>&nbsp;";
