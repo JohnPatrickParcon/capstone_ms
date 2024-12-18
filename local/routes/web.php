@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [App\Http\Controllers\PublicAccessController::class, 'index'])->name("public");
 Route::get('/public_access', [App\Http\Controllers\PublicAccessController::class, 'public_access'])->name("publicNew");
 Route::get('/previewCapstone/{id}', [App\Http\Controllers\PublicAccessController::class, 'preview']);
+Route::get('/registerCoordinator', [App\Http\Controllers\CoordinatorRegisterController::class, 'index'])->name('cooridnatorRegister');
+
 
 // Invite Adviser
 Route::post('/inviteAdviser', [App\Http\Controllers\InviteAdviserController::class, 'send']);

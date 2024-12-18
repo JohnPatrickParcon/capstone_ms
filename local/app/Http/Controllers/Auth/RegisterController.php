@@ -39,6 +39,16 @@ class RegisterController extends Controller
 
     protected function create(array $data)
     {
+        if($data['role'] == 2)
+        {
+            return User::create([
+                'name' => $data['full_name'],
+                'email' => $data['email'],
+                'password' => Hash::make($data['password']),
+                'role' => $data['role'],
+            ]);
+        }
+
         return User::create([
             'name' => $data['full_name'],
             'email' => $data['email'],
@@ -48,6 +58,7 @@ class RegisterController extends Controller
 
     public function register(Request $request)
     {
+        //dd($request);
         $this->validator($request->all())->validate();
         $user = $this->create($request->all());
         
