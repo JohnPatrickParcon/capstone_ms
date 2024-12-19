@@ -51,7 +51,7 @@
     </head>
 
 <body class="grid h-full bg-green-600 justify-items-center">
-    <div class="w-1/2 px-10 my-3 rounded-lg bg-slate-200 justify-items-center">
+    <div class="px-10 my-3 rounded-lg bg-slate-200 justify-items-center">
         <div id="welcome_tag" class="grid mt-4 justify-items-center">
                 <a href="{{route('public')}}">
                     <img src="{{ asset("local/public/images/clsu_logo.png") }}" alt="logo" class="w-16">
