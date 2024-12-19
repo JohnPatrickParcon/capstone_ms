@@ -6,7 +6,7 @@ Route::get('/', [App\Http\Controllers\PublicAccessController::class, 'index'])->
 Route::get('/public_access', [App\Http\Controllers\PublicAccessController::class, 'public_access'])->name("publicNew");
 Route::get('/previewCapstone/{id}', [App\Http\Controllers\PublicAccessController::class, 'preview']);
 Route::get('/registerCoordinator', [App\Http\Controllers\CoordinatorRegisterController::class, 'coordinatorRegister'])->name('coordinatorRegister');
-Route::get('/registerAdvisor', [App\Http\Controllers\CoordinatorRegisterController::class, 'adviserRegister'])->name('adviserRegister');
+Route::get('/registerInstructor', [App\Http\Controllers\CoordinatorRegisterController::class, 'adviserRegister'])->name('adviserRegister');
 
 
 // Invite Adviser
