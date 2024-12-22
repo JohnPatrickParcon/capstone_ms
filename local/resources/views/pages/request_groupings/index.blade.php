@@ -16,8 +16,8 @@
         <div class="container-fluid page-body-wrapper">
             @include('pages.components.navbar')
             <div class="main-panel" style="min-height: 100vh; max-height: 100vh; overflow-y: auto;">
-                <div class="content-wrapper pb-0">
-                    <div class="page-header flex-wrap">
+                <div class="pb-0 content-wrapper">
+                    <div class="flex-wrap page-header">
                         <h3 class="mb-0"> Requesting a Groupings</h3>
                     </div>
 
@@ -37,7 +37,7 @@
                         </div>
                     @endif
 
-                    <div id="main_section" class="card p-5">
+                    <div id="main_section" class="p-5 card">
                         <label for="">Expected groupmates</label>
                         <select name="students[]" multiple="multiple" id="student" class="js-example-basic-multiple form-control" style="width: 100%">
                             @foreach ($student_list as $student)
@@ -70,8 +70,8 @@
                 </div>
                 <footer class="footer">
                     <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                        <span class="text-muted d-block text-center text-sm-left d-sm-inline-block"></span>
-                        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"><b>Capstone Management System</b></span>
+                        <span class="text-center text-muted d-block text-sm-left d-sm-inline-block"></span>
+                        <span class="float-none mt-1 text-center float-sm-right d-block mt-sm-0"><b>Capstone Management System</b></span>
                     </div>
                 </footer>
             </div>
@@ -121,7 +121,16 @@
                     title: "Some fields are empty.",
                     text: "Something went wrong, please try again.",
                 })
-            } else {
+            } 
+            if($finalfinal_student_list.length > 3)
+            {
+                Swal.fire({
+                    icon: "error",
+                    title: "Group member limit exceeded.",
+                    text: "Maximum of three members per group",
+                })
+            }
+            else {
                 console.log({
                     final_student_list,
                     final_panel_list,
