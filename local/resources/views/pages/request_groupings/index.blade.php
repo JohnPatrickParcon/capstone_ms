@@ -122,12 +122,28 @@
                     text: "Something went wrong, please try again.",
                 })
             } 
-            if($finalfinal_student_list.length > 3)
+            if(final_student_list.length > 3)
             {
                 Swal.fire({
                     icon: "error",
                     title: "Group member limit exceeded.",
                     text: "Maximum of three members per group",
+                })
+            }
+            if(final_panel_list.length > 2)
+            {
+                Swal.fire({
+                    icon: "error",
+                    title: "Panel limit.",
+                    text: "Must have 2 panelists only.",
+                })
+            }
+            if(final_panel_list.length < 2)
+            {
+                Swal.fire({
+                    icon: "error",
+                    title: "Panel limit.",
+                    text: "Must have 2 panelists only.",
                 })
             }
             else {

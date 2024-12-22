@@ -87,19 +87,19 @@ class RequestGroupingsController extends Controller
             "is_approved" => 2
         ]);
 
-        // $res = DB::table("groupings_request_update")->where("id", $id)->get();
-        // $users_list = [];
-        // foreach (json_decode($res[0]->data)->final_student_list as $key => $value) {
-        //     array_push($users_list, $value);
-        // }
+        $res = DB::table("groupings_request_update")->where("id", $id)->get();
+        $users_list = [];
+        foreach (json_decode($res[0]->data)->final_student_list as $key => $value) {
+            array_push($users_list, $value);
+        }
 
-        // DB::table("notifications")->insert([
-        //     "targets" => "Groupings Request",
-        //     "content" => "Groupings has been Rejected!",
-        //     "users" => json_encode($users_list),
-        //     "seen_by" => json_encode([]),
-        //     "added_by" => Auth::user()->id
-        // ]);
+        DB::table("notifications")->insert([
+            "targets" => "Groupings Request",
+            "content" => "Groupings has been Rejected!",
+            "users" => json_encode($users_list),
+            "seen_by" => json_encode([]),
+             "added_by" => Auth::user()->id
+         ]);
 
         return 1;
     }
@@ -171,41 +171,41 @@ class RequestGroupingsController extends Controller
             // insert new groupings - end
 
             // Mailer
-            //$to_mail_adviser = [];
-            //$to_mail_panel = [];
-            //$to_mail_students = [];
-////
-            //foreach ($data->final_panel_list as $key => $value) {
-            //    $to_mail_panel[] = DB::table("users")->where("id", $value)->first();
-            //}
-////
-            //foreach ($data->final_student_list as $key => $value) {
-            //    $to_mail_students[] = DB::table("users")->where("id", $value)->first();
-            //}
-////
-            //foreach ($data->final_adviser_list as $key => $value) {
-            //    $to_mail_adviser[] = DB::table("users")->where("id", $value)->first();
-            //}
-////
-            ////// dd($to_mail_adviser);
-////
-            //$data = [
-            //    "adviser" => $to_mail_adviser, 
-            //    "panel" => $to_mail_panel, 
-            //    "students" => $to_mail_students, 
-            //    "message" => "This email is to inform you that a Capstone Groupings has been Created.",
-            //];
-////
-            //foreach ($to_mail_adviser as $key => $value) {
-            //    Mail::to($value->email)->send(new GroupingsEmailer($data));
-            //}
-            //foreach ($to_mail_panel as $key => $value) {
-            //    Mail::to($value->email)->send(new GroupingsEmailer($data));
-            //}
-            //foreach ($to_mail_students as $key => $value) {
-            //    Mail::to($value->email)->send(new GroupingsEmailer($data));
-            //}
+            $to_mail_adviser = [];
+            $to_mail_panel = [];
+            $to_mail_students = [];
 //
+            foreach ($data->final_panel_list as $key => $value) {
+                $to_mail_panel[] = DB::table("users")->where("id", $value)->first();
+            }
+//
+            foreach ($data->final_student_list as $key => $value) {
+                $to_mail_students[] = DB::table("users")->where("id", $value)->first();
+            }
+//
+            foreach ($data->final_adviser_list as $key => $value) {
+                $to_mail_adviser[] = DB::table("users")->where("id", $value)->first();
+            }
+//
+            //// dd($to_mail_adviser);
+//
+            $data = [
+                "adviser" => $to_mail_adviser, 
+                "panel" => $to_mail_panel, 
+                "students" => $to_mail_students, 
+                "message" => "This email is to inform you that a Capstone Groupings has been Created.",
+            ];
+//
+            foreach ($to_mail_adviser as $key => $value) {
+                Mail::to($value->email)->send(new GroupingsEmailer($data));
+            }
+            foreach ($to_mail_panel as $key => $value) {
+                Mail::to($value->email)->send(new GroupingsEmailer($data));
+            }
+            foreach ($to_mail_students as $key => $value) {
+                Mail::to($value->email)->send(new GroupingsEmailer($data));
+            }
+
             DB::commit();
             return true;
 
