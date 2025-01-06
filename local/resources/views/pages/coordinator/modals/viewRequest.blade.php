@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-l ">
         <div class="modal-content rounded-1">
             <div class="modal-header alert alert-secondary rounded-0">
-                <h2 class="modal-title fw-bold" id="exampleModalLabel">Request Information</h2>
+                <h2 class="modal-title fw-bold" id="exampleModalLabel">Create Group Request Information</h2>
             </div>
             <div class="modal-body" id="request_preview_modal">
             </div>

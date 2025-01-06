@@ -58,7 +58,7 @@ class RequestController extends Controller
                 }
 
             }
-
+            
             return datatables()
                 ->of($schedule_requests_main)
                 ->addIndexColumn()
@@ -125,11 +125,13 @@ class RequestController extends Controller
                             }
                         }
                     return $students;
-                })
-                ->rawColumns([
+                })->addColumn("time", function ($req) {
+                    return $req->time_requested;
+                })->rawColumns([
                     'action',
                     'status',
-                    'students_name'
+                    'students_name',
+                    'time',
                 ])
             ->make(true);
         }

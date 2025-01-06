@@ -29,11 +29,11 @@
         <div class="container-fluid page-body-wrapper">
             @include('pages.components.navbar')
             <div class="main-panel" style="min-height: 100vh; max-height: 100vh; overflow-y: auto;">
-                <div class="content-wrapper pb-0">
-                    <div class="page-header flex-wrap">
+                <div class="pb-0 content-wrapper">
+                    <div class="flex-wrap page-header">
                         <h3 class="mb-0"> Hi, welcome to Capstone Management System!</h3>
                     </div>
-                    <div class="card p-3">
+                    <div class="p-3 card">
                         <h3 class="text-center">Request List</h3>
                         <table id="requestTable" class="table table-bordered table-hover" style="width: 100%;">
                             <thead>
@@ -41,6 +41,7 @@
                                     <th>#</th>
                                     <th>Students</th>
                                     <th>Date</th>
+                                    <th>Time Requested</th>
                                     {{-- <th>Purpose</th> --}}
                                     <th>Status</th>
                                     <th data-orderable="false">Action</th>
@@ -51,8 +52,8 @@
                 </div>
                 <footer class="footer">
                     <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                        <span class="text-muted d-block text-center text-sm-left d-sm-inline-block"></span>
-                        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"><b>Capstone Management System</b></span>
+                        <span class="text-center text-muted d-block text-sm-left d-sm-inline-block"></span>
+                        <span class="float-none mt-1 text-center float-sm-right d-block mt-sm-0"><b>Capstone Management System</b></span>
                     </div>
                 </footer>
             </div>
@@ -80,6 +81,7 @@
                     {data: 'DT_RowIndex', name: 'DT_RowIndex', orderable: false, searchable: false},
                     {data: 'students_name', name: 'students_name'},
                     {data: 'date', name: 'date'},
+                    {data: 'time', name: 'time'},
                     {data: 'purpose', name: 'purpose'},
                     // {data: 'status', name: 'status'},
                     {data: 'action', name: 'action', orderable: false, searchable: false},

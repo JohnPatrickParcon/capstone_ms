@@ -81,8 +81,8 @@ class GroupingsController extends Controller
                 })
                 ->addColumn('action', function ($row) {
                     $btn = '';
-                    $btn .= '<button class="btn" style="background: green; color: white;" onclick="handleEditGroup(\''.$row["advisers"][0]->group_reference.'\')"><i class="mdi mdi-file-edit-outline" title="Edit Group"></i></button>&nbsp;&nbsp;';
-                    $btn .= '<button class="btn" style="background: green; color: white;" onclick="handleDeleteGroup(\''.$row["advisers"][0]->group_reference.'\')"><i class="mdi mdi-trash-can-outline" title="Delete Group"></i></button>&nbsp;&nbsp;';
+                    $btn .= '<button class="btn" style="background: green; color: white;" onclick="handleEditGroup(\''.$row["advisers"][0]->group_reference.'\')"><i class="mdi mdi-file-edit-outline" title="Edit Group"></i>Edit Group</button>&nbsp;&nbsp;';
+                    $btn .= '<button class="btn" style="background: green; color: white;" onclick="handleDeleteGroup(\''.$row["advisers"][0]->group_reference.'\')"><i class="mdi mdi-trash-can-outline" title="Delete Group"></i>Delete Group</button>&nbsp;&nbsp;';
                     //$btn .= '<button class="btn" style="background: green; color: white;" onclick="handleGradeGroup(\''.$row["advisers"][0]->group_reference.'\')"><i class="mdi mdi-book" title="Create Grading Form"></i></button>&nbsp;&nbsp;';
                     return $btn;
                 })

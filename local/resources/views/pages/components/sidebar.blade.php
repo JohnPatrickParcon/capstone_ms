@@ -120,7 +120,7 @@
         <li class="nav-item">
             <a class="nav-link" href="{{ route('settings') }}">
                 <i class="mdi mdi-cogs menu-icon"></i>
-                <span class="menu-title">Settings</span>
+                <span class="menu-title">Profile</span>
             </a>
         </li>
         <li class="nav-item sidebar-actions">
